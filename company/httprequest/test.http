@@ -1,0 +1,35 @@
+@host = http://localhost:3500/v1.0
+@app_id = company-service
+@company_id = 67802b791459c3439c85b848
+
+### Create a new company
+POST {{host}}/invoke/{{app_id}}/method/companies/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Example Company",
+  "registration_number": "123456789"
+}
+
+### Get a company by ID
+GET {{host}}/invoke/{{app_id}}/method/companies/{{company_id}}
+Accept: application/json
+
+### Get all companies
+GET {{host}}/invoke/{{app_id}}/method/companies
+Accept: application/json
+
+### Update a company
+PUT {{host}}/invoke/{{app_id}}/method/companies/{{company_id}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Updated Company Name",
+  "registration_number": "987654321"
+}
+
+### Delete a company
+DELETE {{host}}/invoke/{{app_id}}/method/companies/{{company_id}}
+Accept: application/json
